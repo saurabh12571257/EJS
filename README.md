@@ -29,20 +29,6 @@ LiveToTravel is an interactive web application that allows users to track and vi
 - PostgreSQL
 - npm or yarn
 
-### Installation
-
-1. Clone the repository: git clone https://github.com/yourusername/livetotravel.git -> cd livetotravel
-2. Install dependencies: npm install
-3. Create a `.env` file in the root directory with the following variables:
-  DB_HOST=your_database_host
-  DB_NAME=your_database_name
-  DB_PASS=your_database_password
-  JWT_SECRET=your_jwt_secret
-4.Start the application: node index.js
-
-To run the application using Docker: docker build -t livetotravel . -> docker run -p 3000:3000 livetotravel
-
-
 ## 📱 Usage
 
 1. Register a new account or login with existing credentials
@@ -60,15 +46,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Authors
-
-- Your Name - Initial work - [YourGitHubUsername](https://github.com/YourGitHubUsername)
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - World map SVG data
 - Node.js community
