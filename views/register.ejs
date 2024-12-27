@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up • LiveToTravel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/auth.css">
+</head>
+<body>
+  <div class="main-container">
+    <div class="auth-container">
+      <h1 class="logo">LiveToTravel</h1>
+      <p style="color: #8e8e8e; font-size: 17px; font-weight: 600; margin-bottom: 20px;">
+        Sign up to track your travel adventures
+      </p>
+      <form action="/register" method="POST">
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="color" name="color" placeholder="Favorite Color" required>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+    <div class="switch-auth">
+      <p>Have an account? <a href="/login">Log in</a></p>
+    </div>
+  </div>
+</body>
+</html>

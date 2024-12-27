@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+
 html {
   box-sizing: border-box;
 }
@@ -9,6 +11,8 @@ html {
 html,
 body {
   height: 100%;
+  padding-top: 7rem;
+  position: relative;
 }
 body {
   background: #21252b;
@@ -16,31 +20,22 @@ body {
 }
 
 .ag-canvas {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-
-  position: relative;
-  visibility: visible;
-
-  width: 100%;
-  height: 100%;
-  padding: 3rem 1rem;
-  opacity: 1;
-  transition: opacity 0.5s;
-
-  z-index: -1;
-  margin-top: -90px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90vw;
+  height: 90vh;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
 }
 .ag-canvas_svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 100%;
-  margin-left: 1rem;
+  margin-top: 7rem;
+  width: 100vw;
+  height: 80.9vh;
+  min-height: auto;
+  object-fit: cover;
 }
 .ag-canvas_svg path {
   fill: #383d46;
@@ -48,20 +43,41 @@ body {
   stroke: #21252b;
   stroke-opacity: 1;
   stroke-width: 0.5;
-  transition: 0.5s;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.ag-canvas_svg path:hover {
+  opacity: 0.8;
+  stroke: #ffffff;
+  stroke-width: 1px;
+  transform: scale(1.02);
+}
+
+.country-tooltip {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.15s;
+  font-family: 'Montserrat', sans-serif;
+  backdrop-filter: blur(2px);
 }
 
 @media screen and (max-width: 767px) {
   .ag-canvas {
-    -webkit-flex-flow: row wrap;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-    height: auto;
-    padding: 4rem 1rem 1rem;
+    height: 80vh;
+    padding: 1rem 0.5rem;
+    margin-top: -45px;
   }
+  
   .ag-canvas_svg {
-    max-height: calc(100% - 6rem);
-    margin-left: 0;
+    width: 95%;
+    margin: 0 auto;
   }
 }
 
@@ -95,12 +111,18 @@ button {
 }
 
 .total-count {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
   color: white;
-  position: absolute;
-  padding: 15px;
-  left: 0;
-  bottom: 0;
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  margin: 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  z-index: 2;
 }
 
 .tab-view {
@@ -183,7 +205,9 @@ button {
   left: 0;
   opacity: 1;
   -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
   -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 .tab-view-height-auto > ul {
   height: auto !important;
@@ -402,9 +426,11 @@ button {
 }
 .tab-view-effect-scale > ul > li {
   -webkit-transform: scale(0.1, 0.1);
+  transform: scale(0.1, 0.1);
 }
 .tab-view-effect-rotate > ul > li {
   -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 .tab-view-effect-slide-top > ul > li {
   top: -40px;
@@ -447,4 +473,107 @@ button {
   .tab-view-theme-5 > input:checked + label:after {
     display: none;
   }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(31, 41, 55, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.header nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Grand Hotel', cursive;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.resume-btn {
+  background: #000;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.resume-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.tab-view {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  color: rgb(107, 114, 128);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000 ;
+  background-size: 400% 400%;
+  filter: blur(8px);
+  opacity: 0.5;
+  z-index: -1;
+  border-radius: 2.0rem;
+  will-change: opacity;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link:hover::before {
+  opacity: 0.8;
+}
+
+.nav-link-container {
+  position: relative;
+  display: inline-block;
+  padding: 6px;
+  border-radius: 2.0rem;
+  border-color: white;
+  border-width: 2px;
+  border-style: solid;
+  background: rgb(0, 0, 0);
+  backdrop-filter: blur(8px);
+}
+
+.map-container {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
