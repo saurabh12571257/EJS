@@ -36,6 +36,20 @@ LiveToTravel is an interactive web application that allows users to track and vi
 3. Watch your travel statistics update in real-time
 4. Customize your visited countries' color in the settings
 
+The application is deployed on AWS with the following components:
+
+- **Auto Scaling Group**: Automatically scales EC2 instances based on demand
+- **Application Load Balancer**: Distributes traffic across instances
+- **RDS PostgreSQL**: Managed database service
+- **Security Groups**: Properly configured network access
+- **Multiple AZ Support**: High availability across availability zones
+
+### Infrastructure
+- Terraform
+- AWS Services
+- GitHub Actions
+- Docker Hub
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
